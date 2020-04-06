@@ -1,6 +1,7 @@
 {
   "devDependencies": {
     "@semantic-release/exec": "5.0.0",
-    "semantic-release": "17.0.4"
+    "semantic-release": "17.0.4",
+    "conventional-changelog-conventionalcommits": "4.2.3"
   }
 }
