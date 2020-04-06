@@ -29,6 +29,7 @@ pluginBundle {
     website = "https://github.com/driver733/gradle-kotlin-setup-plugin"
     vcsUrl = "https://github.com/driver733/gradle-kotlin-setup-plugin.git"
     tags = listOf("kotlin", "setup")
+    //
 }
 
 gradlePlugin {
