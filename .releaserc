@@ -6,7 +6,7 @@
     [
       "@semantic-release/exec",
       {
-        "publishCmd": "./gradlew clean build publishPlugins -Pgradle.publish.key=${{ secrets.GRALDE_PUBLISH_KEY }} -Pgradle.publish.secret=${{ secrets.GRALDE_PUBLISH_SECRET }}"
+        "publishCmd": "./gradlew clean build publishPlugins -Pgradle.publish.key=${process.env.GRALDE_PUBLISH_KEY} -Pgradle.publish.secret=${process.env.GRALDE_PUBLISH_SECRET}"
       }
     ]
   ],
