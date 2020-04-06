@@ -28,10 +28,7 @@ jobs:
         name: Grant execute permission for gradlew
         run: chmod +x gradlew
       -
-        name: Release to the Gradle Plugins repository
-        run: ./gradlew clean build publishPlugins -Pgradle.publish.key=${{ secrets.GRALDE_PUBLISH_KEY }} -Pgradle.publish.secret=${{ secrets.GRALDE_PUBLISH_SECRET }}
-      -
-        name: Release (semver)
+        name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npx semantic-release
