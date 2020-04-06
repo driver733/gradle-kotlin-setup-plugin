@@ -1,0 +1,37 @@
+# This workflow will build a Java project with Gradle
+# For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-gradle
+
+name: Release
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      -
+        uses: actions/checkout@v2
+      -
+        name: Set up JDK 11
+        uses: actions/setup-java@v1
+        with:
+          java-version: 11
+      -
+        name: Setup Node.js (for semantic-release)
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      -
+        name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+      -
+        name: Release to the Gradle Plugins repository
+        run: ./gradlew clean build publishPlugins -Pgradle.publish.key=${{ secrets.GRALDE_PUBLISH_KEY }} -Pgradle.publish.secret=${{ secrets.GRALDE_PUBLISH_SECRET }}
+      -
+        name: Release (semver)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npx semantic-release

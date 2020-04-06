@@ -20,7 +20,6 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.71")
     implementation("org.jetbrains.kotlin:kotlin-allopen:1.3.71")
     implementation("io.freefair.gradle:lombok-plugin:5.0.0-rc6")
-    //
 }
 
 tasks.withType<KotlinCompile>().configureEach {
