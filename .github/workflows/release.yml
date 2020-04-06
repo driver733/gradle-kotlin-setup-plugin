@@ -34,4 +34,6 @@ jobs:
         name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GRALDE_PUBLISH_KEY: ${{ secrets.GRALDE_PUBLISH_KEY }}
+          GRALDE_PUBLISH_SECRET: ${{ secrets.GRALDE_PUBLISH_SECRET }}
         run: npx semantic-release
