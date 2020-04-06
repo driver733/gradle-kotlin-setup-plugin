@@ -8,7 +8,6 @@ plugins {
 }
 
 group = "com.driver733"
-version = "1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
