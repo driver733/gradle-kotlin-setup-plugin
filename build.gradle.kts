@@ -4,6 +4,7 @@ plugins {
     kotlin("jvm") version "1.3.71"
     `kotlin-dsl`
     id("com.gradle.plugin-publish") version "0.11.0"
+    //    id("maven-publish") // for debugging
 }
 
 group = "com.driver733"
