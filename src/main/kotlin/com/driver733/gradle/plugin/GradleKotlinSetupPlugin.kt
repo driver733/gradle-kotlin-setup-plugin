@@ -16,12 +16,6 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 class GradleKotlinSetupPlugin : Plugin<Project> {
 
     override fun apply(project: Project) {
-
-        val jvmTarget: String = project.convention.getPlugin<JavaPluginConvention>().sourceCompatibility.ordinal.let {
-            val version = it + 1
-            return@let if (version < 9) "1.$version" else "$version"
-        }
-
         with(project) {
             with(plugins) {
                 apply(KotlinPlatformJvmPlugin::class.java)
@@ -53,12 +47,18 @@ class GradleKotlinSetupPlugin : Plugin<Project> {
                 "testImplementation"("com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0")
             }
             tasks.withType(KotlinCompile::class.java).configureEach {
-                kotlinOptions.jvmTarget = jvmTarget
+                kotlinOptions.jvmTarget = project.convention.getPlugin<JavaPluginConvention>().sourceCompatibility.ordinal
+                    .let {
+                        val version = it + 1
+                        return@let if (version < 9) "1.$version" else "$version"
+                    }
                 kotlinOptions.freeCompilerArgs = listOf("-Xjsr305=strict")
             }
-            tasks.withType(JavaCompile::class.java).configureEach {
-                source = (project.properties["delombok"] as Delombok).target.asFileTree
-            }
+            tasks.filter { listOf("compileJava", "compileTestJava").contains(it.name) }
+                .map { it as JavaCompile }
+                .forEach { task ->
+                    task.source = project.properties["delombok"].let { it as Delombok }.target.asFileTree
+                }
         }
     }
 
