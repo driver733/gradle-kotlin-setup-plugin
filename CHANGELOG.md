@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/driver733/gradle-kotlin-setup-plugin/compare/v1.0.3...v1.0.4) (2020-04-08)
+
+
+### Bug Fixes
+
+* delombok gradle task ([7f5b5d8](https://github.com/driver733/gradle-kotlin-setup-plugin/commit/7f5b5d8f96d86d7d015d737cda03901706d46af5))
+
 ## [1.0.3](https://github.com/driver733/gradle-kotlin-setup-plugin/compare/v1.0.2...v1.0.3) (2020-04-07)
 
 
