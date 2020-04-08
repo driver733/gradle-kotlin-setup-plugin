@@ -55,7 +55,9 @@ class GradleKotlinSetupPlugin : Plugin<Project> {
                 kotlinOptions.freeCompilerArgs = listOf("-Xjsr305=strict")
             }
             tasks.filter { listOf("compileJava", "compileTestJava").contains(it.name) }
+                .filter { it.enabled }
                 .map { it as JavaCompile }
+                .filter { it.source.asFileTree.files.isNotEmpty() }
                 .forEach { task ->
                     task.source = project.properties["delombok"].let { it as Delombok }.target.asFileTree
                 }
