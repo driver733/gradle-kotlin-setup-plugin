@@ -1,6 +1,18 @@
 # [1.1.0](https://github.com/driver733/gradle-kotlin-setup-plugin/compare/v1.0.4...v1.1.0) (2020-04-09)
 
 
+### Bug Fixes
+
+* **publishing:** plugin metadata ([7d63fad](https://github.com/driver733/gradle-kotlin-setup-plugin/commit/7d63fad721159ea390e83524cd32e7e1a7e68b86))
+
+
+### Features
+
+* **spring-bom:** spring bom is now used for dependency management ([885976a](https://github.com/driver733/gradle-kotlin-setup-plugin/commit/885976a1bcd519a2148af59fe7abfe9b64a3bc01))
+
+# [1.1.0](https://github.com/driver733/gradle-kotlin-setup-plugin/compare/v1.0.4...v1.1.0) (2020-04-09)
+
+
 ### Features
 
 * **spring-bom:** spring bom is now used for dependency management ([885976a](https://github.com/driver733/gradle-kotlin-setup-plugin/commit/885976a1bcd519a2148af59fe7abfe9b64a3bc01))
