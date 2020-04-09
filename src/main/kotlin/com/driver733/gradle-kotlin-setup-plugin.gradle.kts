@@ -2,21 +2,21 @@ package com.driver733
 
 import io.freefair.gradle.plugins.lombok.tasks.Delombok
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import org.springframework.boot.gradle.plugin.SpringBootPlugin
 
 plugins {
     kotlin("jvm")
     kotlin("kapt")
     id("org.jetbrains.kotlin.plugin.spring")
     id("io.freefair.lombok")
+    id("io.spring.dependency-management")
 }
 
 tasks.find { it.name == "generateLombokConfig" }?.enabled = false
 
 dependencies {
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.3.71")
-    implementation("org.jetbrains.kotlin:kotlin-reflect:1.3.71")
-    implementation("org.gradle.kotlin:plugins:1.3.5")
-
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+    implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-jdk8")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-test")
@@ -54,3 +54,9 @@ tasks.filter { listOf("compileJava", "compileTestJava").contains(it.name) }
     .forEach { task ->
         task.source = project.properties["delombok"].let { it as Delombok }.target.asFileTree
     }
+
+dependencyManagement {
+    imports {
+        mavenBom(SpringBootPlugin.BOM_COORDINATES)
+    }
+}

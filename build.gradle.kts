@@ -20,6 +20,8 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:${getKotlinPluginVersion()}")
     implementation("org.jetbrains.kotlin:kotlin-allopen:${getKotlinPluginVersion()}")
     implementation("io.freefair.gradle:lombok-plugin:5.0.0-rc6")
+    implementation("org.springframework.boot:spring-boot-gradle-plugin:2.2.6.RELEASE")
+    implementation("io.spring.gradle:dependency-management-plugin:1.0.9.RELEASE")
 }
 
 tasks.withType<KotlinCompile>().configureEach {
