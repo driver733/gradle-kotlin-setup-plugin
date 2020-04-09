@@ -1,10 +1,11 @@
+import org.jetbrains.kotlin.gradle.plugin.getKotlinPluginVersion
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.3.71"
     `kotlin-dsl`
+    `kotlin-dsl-precompiled-script-plugins`
     id("com.gradle.plugin-publish") version "0.11.0"
-    //    id("maven-publish") // for debugging
+//    `maven-publish` // for debugging
 }
 
 group = "com.driver733"
@@ -16,8 +17,8 @@ repositories {
 
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
-    implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.71")
-    implementation("org.jetbrains.kotlin:kotlin-allopen:1.3.71")
+    implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:${getKotlinPluginVersion()}")
+    implementation("org.jetbrains.kotlin:kotlin-allopen:${getKotlinPluginVersion()}")
     implementation("io.freefair.gradle:lombok-plugin:5.0.0-rc6")
 }
 
@@ -30,15 +31,4 @@ pluginBundle {
     website = "https://github.com/driver733/gradle-kotlin-setup-plugin"
     vcsUrl = "https://github.com/driver733/gradle-kotlin-setup-plugin.git"
     tags = listOf("kotlin", "setup")
-}
-
-gradlePlugin {
-    plugins {
-        create("kotlin setup") {
-            id = "com.driver733.gradle-kotlin-setup-plugin"
-            displayName = "A plugin that sets up kotlin in your project"
-            description = "A plugin that sets up kotlin dependencies, plugins and build settings"
-            implementationClass = "com.driver733.gradle.plugin.GradleKotlinSetupPlugin"
-        }
-    }
 }
