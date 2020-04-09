@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/driver733/gradle-kotlin-setup-plugin/compare/v1.0.4...v1.1.0) (2020-04-09)
+
+
+### Features
+
+* **spring-bom:** spring bom is now used for dependency management ([885976a](https://github.com/driver733/gradle-kotlin-setup-plugin/commit/885976a1bcd519a2148af59fe7abfe9b64a3bc01))
+
 ## [1.0.4](https://github.com/driver733/gradle-kotlin-setup-plugin/compare/v1.0.3...v1.0.4) (2020-04-08)
 
 
