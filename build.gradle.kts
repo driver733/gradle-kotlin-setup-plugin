@@ -34,3 +34,12 @@ pluginBundle {
     vcsUrl = "https://github.com/driver733/gradle-kotlin-setup-plugin.git"
     tags = listOf("kotlin", "setup")
 }
+
+gradlePlugin
+    .plugins
+    .find { it.name == "com.driver733.gradle-kotlin-setup-plugin" }!!
+    .apply {
+        id = "com.driver733.gradle-kotlin-setup-plugin"
+        displayName = "A plugin that sets up kotlin in your project"
+        description = "A plugin that sets up kotlin dependencies, plugins and build settings"
+    }
