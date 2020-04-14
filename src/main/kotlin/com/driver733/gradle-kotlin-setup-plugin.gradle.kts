@@ -24,13 +24,13 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-rx2")
 
-    implementation("org.awaitility:awaitility-kotlin")
+    implementation("org.mapstruct:mapstruct:1.3.1.Final")
+    implementation("com.github.pozo:mapstruct-kotlin:1.3.1.2")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+    implementation("org.awaitility:awaitility-kotlin")
 
-    api("com.github.pozo:mapstruct-kotlin:1.3.1.1")
-
-    kapt("org.mapstruct:mapstruct-jdk8:1.3.1.Final")
-    kapt("com.github.pozo:mapstruct-kotlin-processor:1.3.1.1")
+    kapt("org.mapstruct:mapstruct-processor:1.3.1.Final")
+    kapt("com.github.pozo:mapstruct-kotlin-processor:1.3.1.2")
 
     testImplementation("org.jetbrains.kotlin:kotlin-test")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit")
