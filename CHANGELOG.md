@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/driver733/gradle-kotlin-setup-plugin/compare/v1.1.0...v1.1.1) (2020-04-14)
+
+
+### Bug Fixes
+
+* deps ([af0b901](https://github.com/driver733/gradle-kotlin-setup-plugin/commit/af0b9017303e8a63e8e6d5f6fa4f299446e76b8d))
+
 # [1.1.0](https://github.com/driver733/gradle-kotlin-setup-plugin/compare/v1.0.4...v1.1.0) (2020-04-09)
 
 
