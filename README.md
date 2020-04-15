@@ -7,7 +7,7 @@ This plugin makes it easy to set up Koltin in a new project as well as in an exi
 
 More specifically this plugin does the following:
 
-1. Adds `kotlin-jvm` and `KAPT` gradle plugins
+1. Applies the `kotlin-jvm` and `KAPT` gradle plugins
 2. Adds common Kotlin dependencies, such as:
     1. `kotlin-stdlib-jdk8`
     2. `kotlin-reflect`
@@ -17,7 +17,7 @@ More specifically this plugin does the following:
     6. and others
 3. Configures `kotlinOptions.jvmTarget` to match the `JavaPlugin.sourceCompatibility`
 4. Resolves the Kotlin's [incompatibility](https://stackoverflow.com/a/35530223/2441104) with Lombok by delomboking
-java source code and pointing the `JavaPlugin` compile tasks to them.
+the project's java source code and pointing the `JavaPlugin` compile tasks to the delomboked source code files.
 
 ## Distribution
 
@@ -82,5 +82,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](https://gi
 
 ## Acknowledgments
 
+* [Gradle lombok plugin](https://plugins.gradle.org/plugin/io.freefair.lombok)
 * [KengoTODA/gradle-semantic-release-plugin](https://github.com/KengoTODA/gradle-semantic-release-plugin)
 * [semantic-release](https://github.com/semantic-release/semantic-release)
