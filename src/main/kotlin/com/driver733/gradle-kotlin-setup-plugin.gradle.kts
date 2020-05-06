@@ -36,6 +36,10 @@ dependencies {
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
     testImplementation("com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0")
+    testImplementation("io.mockk:mockk:1.9.3")
+    testImplementation("com.ninja-squad:springmockk:2.0.1")
+    testImplementation("org.spekframework.spek2:spek-dsl-jvm:2.0.9")
+    testRuntimeOnly("org.spekframework.spek2:spek-runtime-jvm:2.0.9")
 }
 
 tasks.withType(KotlinCompile::class.java).configureEach {
