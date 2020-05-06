@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/driver733/gradle-kotlin-setup-plugin/compare/v1.1.3...v1.2.0) (2020-05-06)
+
+
+### Features
+
+* new test libs added ([ccde277](https://github.com/driver733/gradle-kotlin-setup-plugin/commit/ccde27746ae65e7d7fffeb7f8defa10fe9198fc9))
+
 ## [1.1.3](https://github.com/driver733/gradle-kotlin-setup-plugin/compare/v1.1.2...v1.1.3) (2020-04-15)
 
 
