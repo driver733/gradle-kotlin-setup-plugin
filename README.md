@@ -1,7 +1,7 @@
 # Gradle Kotlin Setup Plugin
 
-![https://github.com/driver733/gradle-kotlin-setup-plugin/actions?query=workflow%3ABuild+branch%3Amaster](https://github.com/driver733/gradle-kotlin-setup-plugin/workflows/Build/badge.svg?branch=master)
-![https://github.com/driver733/gradle-kotlin-setup-plugin/actions?query=workflow%3ARelease](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)
+[![Build](https://github.com/driver733/gradle-kotlin-setup-plugin/workflows/Build/badge.svg?branch=master)](https://github.com/driver733/gradle-kotlin-setup-plugin/actions?query=workflow%3ABuild+branch%3Amaster)
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/driver733/gradle-kotlin-setup-plugin/actions?query=workflow%3ARelease)
 
 This plugin makes it easy to set up Koltin in a new project as well as in an existing Java project.
 
@@ -27,15 +27,29 @@ The plugin is [available](https://plugins.gradle.org/plugin/com.driver733.gradle
 
 ### Requirements
 
-Gradle >= `v. 6.0` is required to use this plugin, because it is a [precompiled script plugin](https://docs.gradle.org/current/userguide/kotlin_dsl.html#kotdsl:precompiled_plugins).
+Gradle >= `v. 6.0` is required to use this plugin, because it is a
+[precompiled script plugin](https://docs.gradle.org/current/userguide/kotlin_dsl.html#kotdsl:precompiled_plugins)
+built with Gradle >= `v. 6.0`.
 
 ### Install
+
+#### Groovy DSL
 
 Add this to your project's `build.gradle`:
 
 ```
 plugins {
   id "com.driver733.gradle-kotlin-setup-plugin" version "1.1.1"
+}
+```
+
+#### Kotlin DSL
+
+Add this to your project's `build.gradle.kts`:
+
+```
+plugins {
+  id("com.driver733.gradle-kotlin-setup-plugin") version "1.1.1"
 }
 ```
 
