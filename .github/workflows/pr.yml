@@ -1,0 +1,30 @@
+name: Pull Request
+
+on: [pull_request]
+
+jobs:
+  build-merge-result:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - uses: actions/setup-java@v1
+        with:
+          java-version: 11
+      - uses: actions/checkout@v2
+        with:
+          ref: master
+          fetch-depth: 0
+      - name: Merge with base branch
+        run: |
+          git fetch origin +refs/heads/${{ github.head_ref }}:refs/remotes/origin/${{ github.head_ref }} --no-tags
+          git checkout ${{ github.head_ref }}
+          git checkout ${{ github.base_ref }}
+          git merge ${{ github.head_ref }}
+      - run: npm i
+      - run: chmod +x gradlew
+      - run: ./gradlew build --no-daemon
+      - run: npx semantic-release --dry-run --no-ci
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
