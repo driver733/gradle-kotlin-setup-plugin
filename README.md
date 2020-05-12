@@ -1,7 +1,11 @@
 # Gradle Kotlin Setup Plugin
 
 [![Build](https://github.com/driver733/gradle-kotlin-setup-plugin/workflows/Build/badge.svg?branch=master)](https://github.com/driver733/gradle-kotlin-setup-plugin/actions?query=workflow%3ABuild+branch%3Amaster)
+[![Gradle Plugin Portal](https://img.shields.io/maven-metadata/v?label=Gradle%20Plugin%20Portal&metadataUrl=https%3A%2F%2Fplugins.gradle.org%2Fm2%2Fcom%2Fdriver733%2Fgradle-kotlin-setup-plugin%2Fcom.driver733.gradle-kotlin-setup-plugin.gradle.plugin%2Fmaven-metadata.xml)](https://plugins.gradle.org/plugin/com.driver733.gradle-kotlin-setup-plugin)
+
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/driver733/gradle-kotlin-setup-plugin/actions?query=workflow%3ARelease)
+
+[![Licence](https://img.shields.io/github/license/driver733/gradle-kotlin-setup-plugin)](https://github.com/driver733/gradle-kotlin-setup-plugin/blob/master/LICENSE)
 
 This plugin makes it easy to set up Koltin in a new project as well as in an existing Java project.
 
