@@ -1,3 +1,12 @@
+### [1.2.4](https://github.com/driver733/gradle-kotlin-setup-plugin/compare/v1.2.3...v1.2.4) (2020-05-14)
+
+
+### Continuous Integration
+
+* fix release notes ([3b2c70c](https://github.com/driver733/gradle-kotlin-setup-plugin/commit/3b2c70cf9fa5f81b17387b2891bfffc86c036d9d))
+* fix release notes ([4ef3b5a](https://github.com/driver733/gradle-kotlin-setup-plugin/commit/4ef3b5a3ccbab115c5e019b0aa8153229a4713ea))
+* pr builds improved ([17139a2](https://github.com/driver733/gradle-kotlin-setup-plugin/commit/17139a20f2754feb663a8df7fa0abc738a1a5816))
+
 ## [1.2.3](https://github.com/driver733/gradle-kotlin-setup-plugin/compare/v1.2.2...v1.2.3) (2020-05-12)
 
 ## [1.2.2](https://github.com/driver733/gradle-kotlin-setup-plugin/compare/v1.2.1...v1.2.2) (2020-05-11)
