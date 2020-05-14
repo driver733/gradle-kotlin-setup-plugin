@@ -22,6 +22,10 @@
             {
               "type": "style",
               "release": "patch"
+            },
+            {
+              "type": "ci",
+              "release": "patch"
             }
           ],
           "preset": "conventionalcommits",
