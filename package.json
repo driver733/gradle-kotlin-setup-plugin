@@ -11,6 +11,14 @@
   },
   "release": {
     "plugins": [
+      "@semantic-release/github",
+      [
+        "@semantic-release/exec",
+        {
+          "verifyConditionsCmd": "run-s verify",
+          "publishCmd": "run-s \"release -- {@}\" -- --release=${nextRelease.version} --sha=${nextRelease.gitHead}"
+        }
+      ],
       [
         "@semantic-release/commit-analyzer",
         {
