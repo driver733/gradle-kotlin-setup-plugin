@@ -1,3 +1,5 @@
+## [1.2.5](https://github.com/driver733/gradle-kotlin-setup-plugin/compare/v1.2.4...v1.2.5) (2020-05-14)
+
 ### [1.2.4](https://github.com/driver733/gradle-kotlin-setup-plugin/compare/v1.2.3...v1.2.4) (2020-05-14)
 
 
