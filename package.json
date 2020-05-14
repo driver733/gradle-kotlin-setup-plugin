@@ -14,13 +14,6 @@
     "plugins": [
       "@semantic-release/github",
       [
-        "@semantic-release/exec",
-        {
-          "verifyConditionsCmd": "run-s verify",
-          "publishCmd": "run-s \"release -- {@}\" -- --release=${nextRelease.version} --sha=${nextRelease.gitHead}"
-        }
-      ],
-      [
         "@semantic-release/commit-analyzer",
         {
           "releaseRules": [
@@ -37,7 +30,6 @@
               "release": "patch"
             }
           ],
-          "preset": "conventionalcommits",
           "presetConfig": {
             "types": [
               {
@@ -99,74 +91,7 @@
         }
       ],
       [
-        "@semantic-release/release-notes-generator",
-        {
-          "preset": "conventionalcommits",
-          "presetConfig": {
-            "types": [
-              {
-                "type": "feat",
-                "section": "Features"
-              },
-              {
-                "type": "feature",
-                "section": "Features"
-              },
-              {
-                "type": "fix",
-                "section": "Bug Fixes"
-              },
-              {
-                "type": "perf",
-                "section": "Performance Improvements"
-              },
-              {
-                "type": "revert",
-                "section": "Reverts"
-              },
-              {
-                "type": "docs",
-                "section": "Documentation"
-              },
-              {
-                "type": "style",
-                "section": "Styles"
-              },
-              {
-                "type": "chore",
-                "section": "Miscellaneous Chores"
-              },
-              {
-                "type": "refactor",
-                "section": "Code Refactoring"
-              },
-              {
-                "type": "test",
-                "section": "Tests"
-              },
-              {
-                "type": "build",
-                "section": "Build System"
-              },
-              {
-                "type": "ci",
-                "section": "Continuous Integration"
-              }
-            ]
-          },
-          "parserOpts": {
-            "noteKeywords": [
-              "BREAKING CHANGE",
-              "BREAKING CHANGES"
-            ]
-          },
-          "writerOpts": {
-            "commitsSort": [
-              "scope",
-              "subject"
-            ]
-          }
-        }
+        "@semantic-release/release-notes-generator"
       ],
       "gradle-semantic-release-plugin",
       "@semantic-release/changelog",
