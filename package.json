@@ -30,6 +30,7 @@
               "release": "patch"
             }
           ],
+          "preset": "conventionalcommits",
           "presetConfig": {
             "types": [
               {
@@ -93,6 +94,7 @@
       [
         "@semantic-release/release-notes-generator",
         {
+          "preset": "conventionalcommits",
           "presetConfig": {
             "types": [
               {
