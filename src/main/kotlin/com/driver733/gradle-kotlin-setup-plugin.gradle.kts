@@ -32,14 +32,28 @@ dependencies {
     kapt("org.mapstruct:mapstruct-processor:1.3.1.Final")
     kapt("com.github.pozo:mapstruct-kotlin-processor:1.3.1.2")
 
-    testImplementation("org.jetbrains.kotlin:kotlin-test")
-    testImplementation("org.jetbrains.kotlin:kotlin-test-junit")
-    testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.6.2")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.6.2")
+
+    testImplementation("junit:junit:4.13")
+    testRuntimeOnly("org.junit.vintage:junit-vintage-engine:5.6.2")
+
+    testImplementation("io.kotest:kotest-runner-junit5-jvm:4.1.0")
+    testImplementation("io.kotest:kotest-runner-console-jvm:4.1.0")
+    testImplementation("io.kotest:kotest-assertions-core-jvm:4.1.0")
+    testImplementation("io.kotest:kotest-property-jvm:4.1.0")
+    testImplementation("io.kotest:kotest-extensions-spring:4.1.0")
+
     testImplementation("com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0")
     testImplementation("io.mockk:mockk:1.9.3")
     testImplementation("com.ninja-squad:springmockk:2.0.1")
+
     testImplementation("org.spekframework.spek2:spek-dsl-jvm:2.0.9")
     testRuntimeOnly("org.spekframework.spek2:spek-runtime-jvm:2.0.9")
+}
+
+tasks.test {
+    useJUnitPlatform()
 }
 
 tasks.withType(KotlinCompile::class.java).configureEach {

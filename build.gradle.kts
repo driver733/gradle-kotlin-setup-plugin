@@ -3,7 +3,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     `kotlin-dsl`
     id("com.gradle.plugin-publish") version "0.11.0"
-//    `maven-publish` // for debugging
+    // `maven-publish` // for debugging
 }
 
 group = "com.driver733"
@@ -18,7 +18,7 @@ dependencies {
     implementation(kotlin("gradle-plugin", "1.3.72"))
     implementation(kotlin("allopen", "1.3.72"))
     implementation("io.freefair.gradle:lombok-plugin:5.0.0-rc6")
-    implementation("org.springframework.boot:spring-boot-gradle-plugin:2.2.6.RELEASE")
+    implementation("org.springframework.boot:spring-boot-gradle-plugin:2.3.1.RELEASE")
     implementation("io.spring.gradle:dependency-management-plugin:1.0.9.RELEASE")
 }
 
