@@ -1,3 +1,23 @@
+## [2.0.0](https://github.com/driver733/gradle-kotlin-setup-plugin/compare/v1.2.7...v2.0.0) (2020-06-23)
+
+
+### ⚠ BREAKING CHANGES
+
+* kotlin-test removed
+* kotlin-test removed
+
+### Features
+
+* kotest added ([31021aa](https://github.com/driver733/gradle-kotlin-setup-plugin/commit/31021aac1976aecfe90dcf73625bce82966c6992))
+
+
+### Continuous Integration
+
+* disable releases on ci commits ([5c81ff0](https://github.com/driver733/gradle-kotlin-setup-plugin/commit/5c81ff079ef5074ec4f3017ff2d87440dc8df1c4))
+
+
+* Merge pull request #45 from driver733/feature/kotest ([64d8ec0](https://github.com/driver733/gradle-kotlin-setup-plugin/commit/64d8ec035aeec569f7fce2c95ecefc13a26c1b1f)), closes [#45](https://github.com/driver733/gradle-kotlin-setup-plugin/issues/45)
+
 ### [1.2.7](https://github.com/driver733/gradle-kotlin-setup-plugin/compare/v1.2.6...v1.2.7) (2020-05-14)
 
 
