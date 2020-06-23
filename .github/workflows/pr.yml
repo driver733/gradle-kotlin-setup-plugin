@@ -18,6 +18,8 @@ jobs:
           fetch-depth: 0
       - name: Merge with base branch
         run: |
+          git config --global user.name 'Mikhail Yakushin'
+          git config --global user.email 'driver733@gmail.com'
           git fetch origin +refs/heads/${{ github.head_ref }}:refs/remotes/origin/${{ github.head_ref }} --no-tags
           git checkout ${{ github.head_ref }}
           git checkout ${{ github.base_ref }}
