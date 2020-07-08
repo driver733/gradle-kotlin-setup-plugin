@@ -2,35 +2,35 @@ package com.driver733
 
 import io.freefair.gradle.plugins.lombok.tasks.Delombok
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-import org.springframework.boot.gradle.plugin.SpringBootPlugin
 
 plugins {
     kotlin("jvm")
     kotlin("kapt")
     id("org.jetbrains.kotlin.plugin.spring")
     id("io.freefair.lombok")
-    id("io.spring.dependency-management")
 }
 
 tasks.find { it.name == "generateLombokConfig" }?.enabled = false
 
 dependencies {
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-    implementation("org.jetbrains.kotlin:kotlin-reflect")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-jdk8")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-test")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactive")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-rx2")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.3.72")
+    implementation("org.jetbrains.kotlin:kotlin-reflect:1.3.72")
+
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.7")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:1.3.7")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.3.7")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactive:1.3.7")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor:1.3.7")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-rx2:1.3.7")
 
     implementation("org.mapstruct:mapstruct:1.3.1.Final")
     implementation("com.github.pozo:mapstruct-kotlin:1.3.1.2")
-    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
-    implementation("org.awaitility:awaitility-kotlin")
-
     kapt("org.mapstruct:mapstruct-processor:1.3.1.Final")
     kapt("com.github.pozo:mapstruct-kotlin-processor:1.3.1.2")
+
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.11.1")
+    implementation("org.awaitility:awaitility-kotlin:4.0.3")
+
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.6.2")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.6.2")
@@ -72,9 +72,3 @@ tasks.filter { listOf("compileJava", "compileTestJava").contains(it.name) }
     .forEach { task ->
         task.source = project.properties["delombok"].let { it as Delombok }.target.asFileTree
     }
-
-dependencyManagement {
-    imports {
-        mavenBom(SpringBootPlugin.BOM_COORDINATES)
-    }
-}
