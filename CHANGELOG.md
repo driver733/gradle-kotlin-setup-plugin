@@ -1,3 +1,14 @@
+## [3.0.0](https://github.com/driver733/gradle-kotlin-setup-plugin/compare/v2.0.0...v3.0.0) (2020-07-08)
+
+
+### ⚠ BREAKING CHANGES
+
+* spring bom removed
+
+### Bug Fixes
+
+* removed spring bom to resolve potential incompatibility issues ([ae37982](https://github.com/driver733/gradle-kotlin-setup-plugin/commit/ae3798258030c8296c8aab2e537980e0f084e6b2))
+
 ## [2.0.0](https://github.com/driver733/gradle-kotlin-setup-plugin/compare/v1.2.7...v2.0.0) (2020-06-23)
 
 
