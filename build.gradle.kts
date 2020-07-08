@@ -18,8 +18,6 @@ dependencies {
     implementation(kotlin("gradle-plugin", "1.3.72"))
     implementation(kotlin("allopen", "1.3.72"))
     implementation("io.freefair.gradle:lombok-plugin:5.0.0-rc6")
-    implementation("org.springframework.boot:spring-boot-gradle-plugin:2.3.1.RELEASE")
-    implementation("io.spring.gradle:dependency-management-plugin:1.0.9.RELEASE")
 }
 
 tasks.withType<KotlinCompile>().configureEach {
