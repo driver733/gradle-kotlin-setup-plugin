@@ -46,7 +46,7 @@ Add this to your project's `build.gradle`:
 
 ```
 plugins {
-  id "com.driver733.gradle-kotlin-setup-plugin" version "1.2.2"
+  id "com.driver733.gradle-kotlin-setup-plugin" version "3.0.0"
 }
 ```
 
@@ -56,7 +56,7 @@ Add this to your project's `build.gradle.kts`:
 
 ```
 plugins {
-  id("com.driver733.gradle-kotlin-setup-plugin") version "1.2.2"
+  id("com.driver733.gradle-kotlin-setup-plugin") version "3.0.0"
 }
 ```
 
