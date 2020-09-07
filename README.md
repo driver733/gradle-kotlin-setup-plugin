@@ -13,18 +13,17 @@ More specifically this plugin does the following:
 
 1. Applies the `kotlin-jvm` and `KAPT` gradle plugins
 2. Adds common Kotlin dependencies, such as:
-    1. `kotlin-stdlib-jdk8`
-    2. `kotlin-reflect`
-    3. `kotlin-coroutines`
-    4. [`kotest` (with extensions)](https://github.com/kotest/kotest)
-    5. [`mockk`](https://github.com/mockk/mockk)
-    6. [`Skek Framework` (with extensions)](https://github.com/spekframework/spek/)
-    5. [`mockito-kotlin`](https://github.com/nhaarman/mockito-kotlin)
-    6. and [others](https://github.com/driver733/gradle-kotlin-setup-plugin/blob/master/src/main/kotlin/com/driver733/gradle-kotlin-setup-plugin.gradle.kts)
+    1. `kotlin-reflect`
+    2. `kotlin-coroutines`
+    3. [`kotest` (with extensions)](https://github.com/kotest/kotest)
+    4. [`mockk`](https://github.com/mockk/mockk)
+    5. [`Skek Framework` (with extensions)](https://github.com/spekframework/spek/)
+    6. [`mockito-kotlin`](https://github.com/nhaarman/mockito-kotlin)
+    7. and [others](https://github.com/driver733/gradle-kotlin-setup-plugin/blob/master/src/main/kotlin/com/driver733/gradle-kotlin-setup-plugin.gradle.kts)
 3. Configures `kotlinOptions.jvmTarget` to match the `JavaPlugin.sourceCompatibility`
 4. Resolves the Kotlin's [incompatibility](https://stackoverflow.com/a/35530223/2441104) with Lombok by delomboking
 the project's java source code and pointing the `JavaPlugin` compile tasks to the delomboked source code files.
-5. Sets up the `test` task to use `JUnit Platform` (aka JUnit 5).
+5. Configures the `test` Gradle task to use the `JUnit Platform` (aka JUnit 5).
 
 ## Distribution
 
@@ -46,7 +45,7 @@ Add this to your project's `build.gradle`:
 
 ```
 plugins {
-  id "com.driver733.gradle-kotlin-setup-plugin" version "3.0.0"
+  id "com.driver733.gradle-kotlin-setup-plugin" version "3.1.0"
 }
 ```
 
@@ -56,7 +55,7 @@ Add this to your project's `build.gradle.kts`:
 
 ```
 plugins {
-  id("com.driver733.gradle-kotlin-setup-plugin") version "3.0.0"
+  id("com.driver733.gradle-kotlin-setup-plugin") version "3.1.0"
 }
 ```
 
