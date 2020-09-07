@@ -13,15 +13,14 @@ plugins {
 tasks.find { it.name == "generateLombokConfig" }?.enabled = false
 
 dependencies {
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.3.72")
-    implementation("org.jetbrains.kotlin:kotlin-reflect:1.3.72")
+    implementation("org.jetbrains.kotlin:kotlin-reflect:1.4.0")
 
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.7")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:1.3.7")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.3.7")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactive:1.3.7")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor:1.3.7")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-rx2:1.3.7")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.9")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:1.3.9")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.3.9")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactive:1.3.9")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor:1.3.9")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-rx2:1.3.9")
 
     implementation("org.mapstruct:mapstruct:1.3.1.Final")
     implementation("com.github.pozo:mapstruct-kotlin:1.3.1.2")
@@ -38,11 +37,10 @@ dependencies {
     testImplementation("junit:junit:4.13")
     testRuntimeOnly("org.junit.vintage:junit-vintage-engine:5.6.2")
 
-    testImplementation("io.kotest:kotest-runner-junit5-jvm:4.1.0")
-    testImplementation("io.kotest:kotest-runner-console-jvm:4.1.0")
-    testImplementation("io.kotest:kotest-assertions-core-jvm:4.1.0")
-    testImplementation("io.kotest:kotest-property-jvm:4.1.0")
-    testImplementation("io.kotest:kotest-extensions-spring:4.1.0")
+    testImplementation("io.kotest:kotest-runner-junit5-jvm:4.2.3")
+    testImplementation("io.kotest:kotest-assertions-core-jvm:4.2.3")
+    testImplementation("io.kotest:kotest-property-jvm:4.2.3")
+    testImplementation("io.kotest:kotest-extensions-spring:4.2.3")
 
     testImplementation("com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0")
     testImplementation("io.mockk:mockk:1.9.3")
