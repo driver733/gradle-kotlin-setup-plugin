@@ -1,3 +1,15 @@
+## [3.1.0](https://github.com/driver733/gradle-kotlin-setup-plugin/compare/v3.0.0...v3.1.0) (2020-09-07)
+
+
+### Features
+
+* deps updated ([8b96ea3](https://github.com/driver733/gradle-kotlin-setup-plugin/commit/8b96ea386ad6c0e4f6a0dccf64b39a880b5983f2))
+
+
+### Documentation
+
+* readme updated ([c1cd94a](https://github.com/driver733/gradle-kotlin-setup-plugin/commit/c1cd94a3202197d79816405328d38bd0d3ce6f26))
+
 ## [3.0.0](https://github.com/driver733/gradle-kotlin-setup-plugin/compare/v2.0.0...v3.0.0) (2020-07-08)
 
 
