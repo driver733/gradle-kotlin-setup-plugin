@@ -30,13 +30,6 @@ dependencies {
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.11.1")
     implementation("org.awaitility:awaitility-kotlin:4.0.3")
 
-
-    testImplementation("org.junit.jupiter:junit-jupiter-api:5.6.2")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.6.2")
-
-    testImplementation("junit:junit:4.13")
-    testRuntimeOnly("org.junit.vintage:junit-vintage-engine:5.6.2")
-
     testImplementation("io.kotest:kotest-runner-junit5-jvm:4.2.3")
     testImplementation("io.kotest:kotest-assertions-core-jvm:4.2.3")
     testImplementation("io.kotest:kotest-property-jvm:4.2.3")
@@ -48,10 +41,6 @@ dependencies {
 
     testImplementation("org.spekframework.spek2:spek-dsl-jvm:2.0.9")
     testRuntimeOnly("org.spekframework.spek2:spek-runtime-jvm:2.0.9")
-}
-
-tasks.test {
-    useJUnitPlatform()
 }
 
 tasks.withType(KotlinCompile::class.java).configureEach {
