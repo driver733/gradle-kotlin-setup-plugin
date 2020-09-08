@@ -1,3 +1,19 @@
+## [4.0.0](https://github.com/driver733/gradle-kotlin-setup-plugin/compare/v3.1.0...v4.0.0) (2020-09-08)
+
+
+### ⚠ BREAKING CHANGES
+
+* junit removed
+
+### Bug Fixes
+
+* junit removed due to potential incompatibility issues ([cc16b85](https://github.com/driver733/gradle-kotlin-setup-plugin/commit/cc16b85a183daecc48fbde73e3a35daed4114664))
+
+
+### Documentation
+
+* readme updated ([ad6f259](https://github.com/driver733/gradle-kotlin-setup-plugin/commit/ad6f259b0198ea08e3eadb1b40d08773b592fa9b))
+
 ## [3.1.0](https://github.com/driver733/gradle-kotlin-setup-plugin/compare/v3.0.0...v3.1.0) (2020-09-07)
 
 
