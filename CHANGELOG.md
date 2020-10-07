@@ -1,3 +1,16 @@
+## [4.1.0](https://github.com/driver733/gradle-kotlin-setup-plugin/compare/v4.0.0...v4.1.0) (2020-10-07)
+
+
+### Features
+
+* detekt added ([eb53a91](https://github.com/driver733/gradle-kotlin-setup-plugin/commit/eb53a9168a52b26c6923eba14775866462166bcc))
+
+
+### Documentation
+
+* readme fix ([80b178f](https://github.com/driver733/gradle-kotlin-setup-plugin/commit/80b178fef91a1c3abd89a4089afca315158db00c))
+* readme updated ([570d11a](https://github.com/driver733/gradle-kotlin-setup-plugin/commit/570d11a2e8f70dda2a4f8568f992f327bec4addb))
+
 ## [4.0.0](https://github.com/driver733/gradle-kotlin-setup-plugin/compare/v3.1.0...v4.0.0) (2020-09-08)
 
 
