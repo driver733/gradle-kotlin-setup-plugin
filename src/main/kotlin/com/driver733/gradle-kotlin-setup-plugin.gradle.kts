@@ -8,12 +8,13 @@ plugins {
     kotlin("kapt")
     id("org.jetbrains.kotlin.plugin.spring")
     id("io.freefair.lombok")
+    id("io.gitlab.arturbosch.detekt")
 }
 
 tasks.find { it.name == "generateLombokConfig" }?.enabled = false
 
 dependencies {
-    implementation("org.jetbrains.kotlin:kotlin-reflect:1.4.0")
+    implementation("org.jetbrains.kotlin:kotlin-reflect:1.4.10")
 
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.9")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:1.3.9")
@@ -30,6 +31,8 @@ dependencies {
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.11.1")
     implementation("org.awaitility:awaitility-kotlin:4.0.3")
 
+    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.14.1")
+
     testImplementation("io.kotest:kotest-runner-junit5-jvm:4.2.3")
     testImplementation("io.kotest:kotest-assertions-core-jvm:4.2.3")
     testImplementation("io.kotest:kotest-property-jvm:4.2.3")
@@ -41,6 +44,18 @@ dependencies {
 
     testImplementation("org.spekframework.spek2:spek-dsl-jvm:2.0.9")
     testRuntimeOnly("org.spekframework.spek2:spek-runtime-jvm:2.0.9")
+}
+
+detekt {
+    failFast = false
+    autoCorrect = false
+    buildUponDefaultConfig = true
+
+    reports {
+        html.enabled = true
+        xml.enabled = true
+        txt.enabled = true
+    }
 }
 
 tasks.withType(KotlinCompile::class.java).configureEach {

@@ -11,7 +11,10 @@ This plugin makes it easy to set up Koltin in a new project as well as in an exi
 
 More specifically this plugin does the following:
 
-1. Applies the `kotlin-jvm` and `KAPT` gradle plugins
+1. Applies the following gradle plugins:
+    1. `kotlin-jvm` 
+    2. `KAPT`
+    3. [`detekt`](https://github.com/detekt/detekt)
 2. Adds common Kotlin dependencies, such as:
     1. `kotlin std lib` (added by the `kotlin-jvm` plugin)
     2. `kotlin-reflect`
@@ -20,7 +23,7 @@ More specifically this plugin does the following:
     5. [`mockk`](https://github.com/mockk/mockk)
     6. [`Spek Framework` (with extensions)](https://github.com/spekframework/spek/)
     7. [`mockito-kotlin`](https://github.com/nhaarman/mockito-kotlin)
-    8. and [others](https://github.com/driver733/gradle-kotlin-setup-plugin/blob/master/src/main/kotlin/com/driver733/gradle-kotlin-setup-plugin.gradle.kts)
+    and [others](https://github.com/driver733/gradle-kotlin-setup-plugin/blob/master/src/main/kotlin/com/driver733/gradle-kotlin-setup-plugin.gradle.kts)
 3. Configures `kotlinOptions.jvmTarget` to match the `JavaPlugin.sourceCompatibility`
 4. Resolves the Kotlin's [incompatibility](https://stackoverflow.com/a/35530223/2441104) with Lombok by delomboking
 the project's java source code and pointing the `JavaPlugin` compile tasks to the delomboked source code files.
@@ -45,7 +48,7 @@ Add this to your project's `build.gradle`:
 
 ```
 plugins {
-  id "com.driver733.gradle-kotlin-setup-plugin" version "4.0.0"
+  id "com.driver733.gradle-kotlin-setup-plugin" version "4.1.0"
 }
 ```
 
@@ -55,7 +58,7 @@ Add this to your project's `build.gradle.kts`:
 
 ```
 plugins {
-  id("com.driver733.gradle-kotlin-setup-plugin") version "4.0.0"
+  id("com.driver733.gradle-kotlin-setup-plugin") version "4.1.0"
 }
 ```
 
