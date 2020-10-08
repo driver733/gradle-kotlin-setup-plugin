@@ -48,7 +48,7 @@ Add this to your project's `build.gradle`:
 
 ```
 plugins {
-  id "com.driver733.gradle-kotlin-setup-plugin" version "4.1.0"
+  id "com.driver733.gradle-kotlin-setup-plugin" version "4.2.0"
 }
 ```
 
@@ -58,7 +58,19 @@ Add this to your project's `build.gradle.kts`:
 
 ```
 plugins {
-  id("com.driver733.gradle-kotlin-setup-plugin") version "4.1.0"
+  id("com.driver733.gradle-kotlin-setup-plugin") version "4.2.0"
+}
+```
+
+## Detekt
+
+[By default](https://github.com/driver733/gradle-kotlin-setup-plugin/blob/master/src/main/resources/config/detekt.yml)
+detekt is configured to ignore errors. You can change this and other options in your build script:
+
+```kotlin
+detekt {
+    ignoreFailures = true // Fail build on errors
+    autoCorrect = true // Automatically correct errors
 }
 ```
 
