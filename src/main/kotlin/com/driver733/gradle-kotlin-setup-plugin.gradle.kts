@@ -1,6 +1,7 @@
 package com.driver733
 
 import io.freefair.gradle.plugins.lombok.tasks.Delombok
+import io.gitlab.arturbosch.detekt.extensions.DetektExtension
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
@@ -47,9 +48,11 @@ dependencies {
 }
 
 detekt {
+    ignoreFailures = true
     failFast = false
     autoCorrect = false
     buildUponDefaultConfig = true
+    config = files(configFilePath())
 
     reports {
         html.enabled = true
@@ -57,6 +60,8 @@ detekt {
         txt.enabled = true
     }
 }
+
+tasks.getByName("check").dependsOn("detekt")
 
 tasks.withType(KotlinCompile::class.java).configureEach {
     kotlinOptions.jvmTarget = project.convention.getPlugin<JavaPluginConvention>().sourceCompatibility.ordinal
@@ -74,3 +79,14 @@ tasks.filter { listOf("compileJava", "compileTestJava").contains(it.name) }
     .forEach { task ->
         task.source = project.properties["delombok"].let { it as Delombok }.target.asFileTree
     }
+
+fun DetektExtension.configFilePath() =
+    javaClass
+        .getResourceAsStream("/config/detekt.yml")
+        .bufferedReader(Charsets.UTF_8)
+        .use { it.readText() }
+        .let {
+            createTempFile()
+                .apply { appendText(it) }
+                .path
+        }
