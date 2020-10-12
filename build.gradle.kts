@@ -19,13 +19,17 @@ dependencies {
     implementation("io.freefair.gradle:lombok-plugin:5.0.0-rc6")
     implementation("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.14.1")
 
-    testImplementation("io.kotest:kotest-runner-junit5-jvm:4.2.3")
-    testImplementation("io.kotest:kotest-assertions-core-jvm:4.2.3")
+    testImplementation("io.kotest:kotest-runner-junit5-jvm:4.3.0")
+    testImplementation("io.kotest:kotest-assertions-core-jvm:4.3.0")
 }
 
 tasks.withType<KotlinCompile>().configureEach {
     kotlinOptions.jvmTarget = "11"
     kotlinOptions.freeCompilerArgs = listOf("-Xjsr305=strict")
+}
+
+tasks.withType<Test> {
+    useJUnitPlatform()
 }
 
 pluginBundle {
@@ -36,7 +40,7 @@ pluginBundle {
 
 gradlePlugin
     .plugins
-    .find { it.name == "com.driver733.gradle-kotlin-setup-plugin" }!!
+    .find { it.name == "com.driver733.gradle.plugin.kotlinsetup.gradle-kotlin-setup-plugin" }!!
     .apply {
         id = "com.driver733.gradle-kotlin-setup-plugin"
         displayName = "A plugin that sets up kotlin in your project"

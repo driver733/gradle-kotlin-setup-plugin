@@ -24,6 +24,10 @@
             {
               "type": "style",
               "release": "patch"
+            },
+            {
+              "type": "deps",
+              "release": "patch"
             }
           ],
           "preset": "conventionalcommits",
@@ -76,6 +80,10 @@
               {
                 "type": "ci",
                 "section": "Continuous Integration"
+              },
+              {
+                "type": "deps",
+                "section": "Dependencies"
               }
             ]
           },

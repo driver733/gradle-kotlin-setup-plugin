@@ -1,4 +1,4 @@
-package com.driver733
+package com.driver733.gradle.plugin.kotlinsetup
 
 import io.freefair.gradle.plugins.lombok.tasks.Delombok
 import io.gitlab.arturbosch.detekt.extensions.DetektExtension
@@ -24,27 +24,26 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor:1.3.9")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-rx2:1.3.9")
 
-    implementation("org.mapstruct:mapstruct:1.3.1.Final")
-    implementation("com.github.pozo:mapstruct-kotlin:1.3.1.2")
-    kapt("org.mapstruct:mapstruct-processor:1.3.1.Final")
-    kapt("com.github.pozo:mapstruct-kotlin-processor:1.3.1.2")
+    implementation("org.mapstruct:mapstruct:1.4.1.Final")
+    kapt("org.mapstruct:mapstruct-processor:1.4.1.Final")
 
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.11.1")
     implementation("org.awaitility:awaitility-kotlin:4.0.3")
 
-    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.14.1")
-
-    testImplementation("io.kotest:kotest-runner-junit5-jvm:4.2.3")
-    testImplementation("io.kotest:kotest-assertions-core-jvm:4.2.3")
-    testImplementation("io.kotest:kotest-property-jvm:4.2.3")
-    testImplementation("io.kotest:kotest-extensions-spring:4.2.3")
+    testImplementation("io.kotest:kotest-runner-junit5-jvm:4.3.0")
+    testImplementation("io.kotest:kotest-assertions-core-jvm:4.3.0")
+    testImplementation("io.kotest:kotest-property-jvm:4.3.0")
+    testImplementation("io.kotest:kotest-extensions-spring:4.3.0")
 
     testImplementation("com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0")
-    testImplementation("io.mockk:mockk:1.9.3")
-    testImplementation("com.ninja-squad:springmockk:2.0.1")
+
+    testImplementation("io.mockk:mockk:1.10.2")
+    testImplementation("com.ninja-squad:springmockk:2.0.3")
 
     testImplementation("org.spekframework.spek2:spek-dsl-jvm:2.0.9")
     testRuntimeOnly("org.spekframework.spek2:spek-runtime-jvm:2.0.9")
+
+    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.14.1")
 }
 
 detekt {

@@ -1,4 +1,4 @@
-package com.driver733
+package com.driver733.gradle.plugin.kotlinsetup
 
 import io.kotest.core.spec.style.FunSpec
 import io.kotest.matchers.shouldBe
@@ -30,27 +30,46 @@ class GradleKotlinSetupPluginTest : FunSpec() {
     init {
 
         test("build") {
-            val actual = buildResult("build")
-
-            actual.output shouldContainIgnoringCase "kotlin"
-            actual.assertSuccess(":build")
+            with(buildResult("build")) {
+                output shouldContainIgnoringCase "kotlin"
+                assertSuccess(":build")
+            }
         }
 
-        test("dependencies") {
-            val actual = buildResult("dependencies")
+        test("test") {
+            with(buildResult("test")) {
+                tasks.first { it.path == ":test" }.outcome shouldBe TaskOutcome.NO_SOURCE
+            }
+        }
 
-            actual.output shouldContainIgnoringCase "org.jetbrains.kotlin"
-            actual.output shouldContainIgnoringCase "kotest"
-            actual.output shouldContainIgnoringCase "mockk"
-            actual.assertSuccess(":dependencies")
+        test("kapt") {
+            with(buildResult("kaptKotlin")) {
+                tasks.first { it.path == ":kaptKotlin" }.outcome shouldBe TaskOutcome.UP_TO_DATE
+            }
+        }
+
+        test("detekt") {
+            with(buildResult("detekt")) {
+                tasks.first { it.path == ":detekt" }.outcome shouldBe TaskOutcome.NO_SOURCE
+            }
+        }
+
+
+        test("dependencies") {
+            with(buildResult("dependencies")) {
+                output shouldContainIgnoringCase "org.jetbrains.kotlin"
+                output shouldContainIgnoringCase "kotest"
+                output shouldContainIgnoringCase "mockk"
+                assertSuccess(":dependencies")
+            }
         }
 
         test("tasks") {
-            val actual = buildResult("tasks")
-
-            actual.output shouldContainIgnoringCase "Build tasks"
-            actual.output shouldContainIgnoringCase "Lombok tasks"
-            actual.assertSuccess(":tasks")
+            with(buildResult("tasks")) {
+                output shouldContainIgnoringCase "Build tasks"
+                output shouldContainIgnoringCase "Lombok tasks"
+                assertSuccess(":tasks")
+            }
         }
 
     }
