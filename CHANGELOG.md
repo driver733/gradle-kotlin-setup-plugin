@@ -1,3 +1,14 @@
+## [5.0.0](https://github.com/driver733/gradle-kotlin-setup-plugin/compare/v4.2.1...v5.0.0) (2020-12-18)
+
+
+### ⚠ BREAKING CHANGES
+
+* rarely used libs removed
+
+### Bug Fixes
+
+* junitPlatform enabled for all projects ([98a3a3c](https://github.com/driver733/gradle-kotlin-setup-plugin/commit/98a3a3c3d9f5fe8eaebb66f4a17353867cbef253))
+
 ### [4.2.1](https://github.com/driver733/gradle-kotlin-setup-plugin/compare/v4.2.0...v4.2.1) (2020-10-12)
 
 ## [4.2.0](https://github.com/driver733/gradle-kotlin-setup-plugin/compare/v4.1.0...v4.2.0) (2020-10-08)
