@@ -13,13 +13,8 @@ plugins {
 }
 
 dependencies {
-    implementation("org.jetbrains.kotlin:kotlin-reflect:1.4.21")
-
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.4.2")
-
-    implementation("org.mapstruct:mapstruct:1.4.1.Final")
-    kapt("org.mapstruct:mapstruct-processor:1.4.1.Final")
 
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.11.1")
     implementation("org.awaitility:awaitility-kotlin:4.0.3")
@@ -56,23 +51,41 @@ detekt {
 
 tasks.find { it.name == "generateLombokConfig" }?.enabled = false
 
-tasks.getByName("check").dependsOn("detekt")
+tasks
+    .getByName("check")
+    .dependsOn("detekt")
 
-tasks.withType(KotlinCompile::class.java).configureEach {
-    kotlinOptions.jvmTarget = project.convention.getPlugin<JavaPluginConvention>().sourceCompatibility.ordinal
-        .let {
-            val version = it + 1
-            return@let if (version < 9) "1.$version" else "$version"
+tasks
+    .withType<KotlinCompile>()
+    .configureEach {
+        with(kotlinOptions) {
+            jvmTarget =
+                project
+                    .convention
+                    .getPlugin<JavaPluginConvention>()
+                    .sourceCompatibility
+                    .ordinal
+                    .let {
+                        val version = it + 1
+                        if (version < 9) "1.$version" else "$version"
+                    }
+            freeCompilerArgs = listOf("-Xjsr305=strict")
+            kapt.includeCompileClasspath = false
         }
-    kotlinOptions.freeCompilerArgs = listOf("-Xjsr305=strict")
-}
+    }
 
-tasks.filter { listOf("compileJava", "compileTestJava").contains(it.name) }
+tasks
+    .filter { it.name in setOf("compileJava", "compileTestJava") }
     .filter { it.enabled }
     .map { it as JavaCompile }
     .filter { it.source.asFileTree.files.isNotEmpty() }
     .forEach { task ->
-        task.source = project.properties["delombok"].let { it as Delombok }.target.asFileTree
+        task.source =
+            project
+                .properties["delombok"]
+                .let { it as Delombok }
+                .target
+                .asFileTree
     }
 
 fun DetektExtension.configFilePath() =
@@ -85,3 +98,4 @@ fun DetektExtension.configFilePath() =
                 .apply { appendText(it) }
                 .path
         }
+
