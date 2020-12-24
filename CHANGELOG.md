@@ -1,3 +1,14 @@
+## [6.0.0](https://github.com/driver733/gradle-kotlin-setup-plugin/compare/v5.0.1...v6.0.0) (2020-12-24)
+
+
+### ⚠ BREAKING CHANGES
+
+* removed mapstruct
+
+### Bug Fixes
+
+* deps upd ([e21fffa](https://github.com/driver733/gradle-kotlin-setup-plugin/commit/e21fffa8e980ab4e0a06ec2eb2482b558612a5f7))
+
 ### [5.0.1](https://github.com/driver733/gradle-kotlin-setup-plugin/compare/v5.0.0...v5.0.1) (2020-12-18)
 
 ## [5.0.0](https://github.com/driver733/gradle-kotlin-setup-plugin/compare/v4.2.1...v5.0.0) (2020-12-18)
