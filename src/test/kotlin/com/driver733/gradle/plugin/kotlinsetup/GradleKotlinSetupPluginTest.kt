@@ -9,13 +9,14 @@ import org.gradle.testkit.runner.TaskOutcome
 
 class GradleKotlinSetupPluginTest : FunSpec() {
 
-    private val projectDir = createTempDir().apply {
-        resolve("setting.gradle.kts").apply {
-            appendText("rootProject.name = \"gradle-kotlin-setup-plugin-test\"")
-        }
-        resolve("build.gradle.kts").apply {
-            appendText(
-                """
+    private val projectDir =
+        createTempDir().apply {
+            resolve("setting.gradle.kts").apply {
+                appendText("rootProject.name = \"gradle-kotlin-setup-plugin-test\"")
+            }
+            resolve("build.gradle.kts").apply {
+                appendText(
+                    """
                     plugins {
                         id("com.driver733.gradle-kotlin-setup-plugin")
                     }
@@ -23,9 +24,9 @@ class GradleKotlinSetupPluginTest : FunSpec() {
                         mavenCentral()
                     }
             """
-            )
+                )
+            }
         }
-    }
 
     init {
 
@@ -53,7 +54,6 @@ class GradleKotlinSetupPluginTest : FunSpec() {
                 tasks.first { it.path == ":detekt" }.outcome shouldBe TaskOutcome.NO_SOURCE
             }
         }
-
 
         test("dependencies") {
             with(buildResult("dependencies")) {
@@ -85,9 +85,4 @@ class GradleKotlinSetupPluginTest : FunSpec() {
             .withArguments(*args)
             .withPluginClasspath()
             .build()
-
 }
-
-
-
-
