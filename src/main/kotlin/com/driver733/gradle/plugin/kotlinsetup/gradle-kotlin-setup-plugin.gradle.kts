@@ -18,18 +18,38 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.4.2")
 
-    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.12.1")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.11.1") // do not update (yet). the update breaks tests due to a bug.
     implementation("org.awaitility:awaitility-kotlin:4.0.3")
 
     testImplementation("io.kotest:kotest-runner-junit5-jvm:4.4.1")
     testImplementation("io.kotest:kotest-assertions-core-jvm:4.4.1")
-    testImplementation("io.kotest:kotest-extensions-spring:4.4.1")
-
     testImplementation("io.mockk:mockk:1.10.6")
-    testImplementation("com.ninja-squad:springmockk:3.0.1")
 
     detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.15.0")
 }
+
+afterEvaluate {
+    if (hasSpringTestDep()) {
+        dependencies {
+            testImplementation("io.kotest:kotest-extensions-spring:4.4.1")
+            testImplementation("com.ninja-squad:springmockk:2.0.3")
+        }
+    }
+}
+
+fun hasSpringTestDep() =
+    allprojects.any { proj ->
+        proj.configurations.any { config ->
+            config.dependencies.any { dep ->
+                dep.isSpringTest()
+            }
+        }
+    }
+
+fun Dependency.isSpringTest() =
+    group?.contains("spring") ?: false
+            && name.contains("spring")
+            && name.contains("test")
 
 allprojects {
     tasks.withType<Test> {
