@@ -13,20 +13,22 @@ plugins {
 }
 
 dependencies {
+    implementation(kotlin("reflect", "1.4.30"))
+
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.4.2")
 
-    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.11.1")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.12.1")
     implementation("org.awaitility:awaitility-kotlin:4.0.3")
 
-    testImplementation("io.kotest:kotest-runner-junit5-jvm:4.3.2")
-    testImplementation("io.kotest:kotest-assertions-core-jvm:4.3.2")
-    testImplementation("io.kotest:kotest-extensions-spring:4.3.2")
+    testImplementation("io.kotest:kotest-runner-junit5-jvm:4.4.1")
+    testImplementation("io.kotest:kotest-assertions-core-jvm:4.4.1")
+    testImplementation("io.kotest:kotest-extensions-spring:4.4.1")
 
-    testImplementation("io.mockk:mockk:1.10.3-jdk8")
-    testImplementation("com.ninja-squad:springmockk:2.0.3")
+    testImplementation("io.mockk:mockk:1.10.6")
+    testImplementation("com.ninja-squad:springmockk:3.0.1")
 
-    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.14.2")
+    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.15.0")
 }
 
 allprojects {
@@ -67,9 +69,13 @@ tasks
                     .ordinal
                     .let {
                         val version = it + 1
-                        if (version < 9) "1.$version" else "$version"
+                        if (version <= 8) "1.$version" else "$version"
                     }
-            freeCompilerArgs = listOf("-Xjsr305=strict")
+            freeCompilerArgs =
+                listOf(
+                    "-Xjsr305=strict",
+                    "-Xjvm-default=all-compatibility"
+                )
             kapt.includeCompileClasspath = false
         }
     }
