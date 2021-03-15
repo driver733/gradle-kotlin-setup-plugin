@@ -1,5 +1,6 @@
 package com.driver733.gradle.plugin.kotlinsetup
 
+import gradle.kotlin.dsl.accessors._1b4c26afbd40f3a80ad253d03a3cfe3d.*
 import io.freefair.gradle.plugins.lombok.tasks.Delombok
 import io.gitlab.arturbosch.detekt.extensions.DetektExtension
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
@@ -14,24 +15,25 @@ plugins {
 
 dependencies {
     implementation(kotlin("reflect", "1.4.30"))
-
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.4.2")
+
+    implementation("io.github.microutils:kotlin-logging:1.12.5")
 
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.11.1") // do not update (yet). the update breaks tests due to a bug.
     implementation("org.awaitility:awaitility-kotlin:4.0.3")
 
-    testImplementation("io.kotest:kotest-runner-junit5-jvm:4.4.1")
-    testImplementation("io.kotest:kotest-assertions-core-jvm:4.4.1")
+    testImplementation("io.kotest:kotest-runner-junit5-jvm:4.4.3")
+    testImplementation("io.kotest:kotest-assertions-core-jvm:4.4.3")
     testImplementation("io.mockk:mockk:1.10.6")
 
-    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.15.0")
+    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.16.0")
 }
 
 afterEvaluate {
     if (hasSpringTestDep()) {
         dependencies {
-            testImplementation("io.kotest:kotest-extensions-spring:4.4.1")
+            testImplementation("io.kotest:kotest-extensions-spring:4.4.3")
             testImplementation("com.ninja-squad:springmockk:2.0.3")
         }
     }
