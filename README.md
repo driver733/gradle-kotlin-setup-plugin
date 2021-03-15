@@ -16,14 +16,13 @@ More specifically this plugin does the following:
     2. `KAPT`
     3. [`detekt`](https://github.com/detekt/detekt)
 2. Adds common Kotlin dependencies, such as:
-    1. `kotlin std lib` (added by the `kotlin-jvm` plugin)
+    1. `kotlin std lib`
     2. `kotlin-reflect`
     3. `kotlin-coroutines`
     4. [`kotest` (with extensions)](https://github.com/kotest/kotest)
     5. [`mockk`](https://github.com/mockk/mockk)
-    6. [`Spek Framework` (with extensions)](https://github.com/spekframework/spek/)
-    7. [`mockito-kotlin`](https://github.com/nhaarman/mockito-kotlin)
-    and [others](https://github.com/driver733/gradle-kotlin-setup-plugin/blob/master/src/main/kotlin/com/driver733/gradle-kotlin-setup-plugin.gradle.kts)
+    6. [`kotlin-logging`](https://github.com/MicroUtils/kotlin-logging)
+    and [other](https://github.com/driver733/gradle-kotlin-setup-plugin/blob/master/src/main/kotlin/com/driver733/gradle-kotlin-setup-plugin.gradle.kts)
 3. Configures `kotlinOptions.jvmTarget` to match the `JavaPlugin.sourceCompatibility`
 4. Resolves the Kotlin's [incompatibility](https://stackoverflow.com/a/35530223/2441104) with Lombok by delomboking
 the project's java source code and pointing the `JavaPlugin` compile tasks to the delomboked source code files.
@@ -48,7 +47,7 @@ Add this to your project's `build.gradle`:
 
 ```
 plugins {
-  id "com.driver733.gradle-kotlin-setup-plugin" version "4.2.0"
+  id "com.driver733.gradle-kotlin-setup-plugin" version "6.0.3"
 }
 ```
 
@@ -58,7 +57,7 @@ Add this to your project's `build.gradle.kts`:
 
 ```
 plugins {
-  id("com.driver733.gradle-kotlin-setup-plugin") version "4.2.0"
+  id("com.driver733.gradle-kotlin-setup-plugin") version "6.0.3"
 }
 ```
 
@@ -78,7 +77,7 @@ detekt {
 
 ### Prerequisites
 
-[JDK](https://stackoverflow.com/a/52524114/2441104), preferably >= `v. 1.8`
+[JDK](https://stackoverflow.com/a/52524114/2441104) >= `v. 1.6`
 
 ### Build
 
