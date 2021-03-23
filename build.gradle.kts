@@ -14,12 +14,12 @@ repositories {
 }
 
 dependencies {
-    implementation(kotlin("gradle-plugin", "1.4.30"))
-    implementation(kotlin("allopen", "1.4.30"))
+    implementation(kotlin("gradle-plugin", "1.4.32"))
+    implementation(kotlin("allopen", "1.4.32"))
     implementation("io.freefair.gradle:lombok-plugin:5.3.0")
-    implementation("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.15.0")
+    implementation("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.16.0")
 
-    testImplementation(kotlin("reflect", "1.4.30"))
+    testImplementation(kotlin("reflect", "1.4.32"))
     testImplementation("io.kotest:kotest-runner-junit5-jvm:4.4.1")
     testImplementation("io.kotest:kotest-assertions-core-jvm:4.4.1")
 }
