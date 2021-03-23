@@ -1,3 +1,15 @@
+### [6.0.4](https://github.com/driver733/gradle-kotlin-setup-plugin/compare/v6.0.3...v6.0.4) (2021-03-23)
+
+
+### Bug Fixes
+
+* deps upd ([f22aa31](https://github.com/driver733/gradle-kotlin-setup-plugin/commit/f22aa31f6cf701047cd27cebcc7b274580b81c9f))
+
+
+### Miscellaneous Chores
+
+* readme upd ([d4f0ff8](https://github.com/driver733/gradle-kotlin-setup-plugin/commit/d4f0ff86fe50d98132f5f3009c859f93f57ef088))
+
 ### [6.0.3](https://github.com/driver733/gradle-kotlin-setup-plugin/compare/v6.0.2...v6.0.3) (2021-03-15)
 
 
