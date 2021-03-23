@@ -14,11 +14,11 @@ plugins {
 }
 
 dependencies {
-    implementation(kotlin("reflect", "1.4.30"))
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.4.2")
+    implementation(kotlin("reflect", "1.4.32"))
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.3")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.4.3")
 
-    implementation("io.github.microutils:kotlin-logging:1.12.5")
+    implementation("io.github.microutils:kotlin-logging:2.0.6")
 
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.11.1") // do not update (yet). the update breaks tests due to a bug.
     implementation("org.awaitility:awaitility-kotlin:4.0.3")
