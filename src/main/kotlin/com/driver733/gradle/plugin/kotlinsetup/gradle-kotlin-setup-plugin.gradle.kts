@@ -37,7 +37,7 @@ with(extension) {
     afterEvaluate {
         if (hasSpringTestDep()) {
             dependencies {
-                testImplementation("io.kotest:kotest-extensions-spring:$kotestVersion")
+                testImplementation("io.kotest:kotest-extensions-spring:4.4.3")
                 testImplementation("com.ninja-squad:springmockk:3.0.1")
             }
         }
