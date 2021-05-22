@@ -1,3 +1,14 @@
+## [7.0.0](https://github.com/driver733/gradle-kotlin-setup-plugin/compare/v6.0.4...v7.0.0) (2021-05-22)
+
+
+### ⚠ BREAKING CHANGES
+
+* spring-boot 2.4.x+ is required now
+
+### Bug Fixes
+
+* deps upd ([e18fff0](https://github.com/driver733/gradle-kotlin-setup-plugin/commit/e18fff06cef72baa4d5831176a70d4aa0c5aa6dd))
+
 ### [6.0.4](https://github.com/driver733/gradle-kotlin-setup-plugin/compare/v6.0.3...v6.0.4) (2021-03-23)
 
 
