@@ -23,7 +23,7 @@ class GradleKotlinSetupPluginTest : FunSpec() {
                     repositories {
                         mavenCentral()
                     }
-            """
+                    """
                 )
             }
         }
