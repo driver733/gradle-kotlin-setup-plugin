@@ -1,3 +1,10 @@
+### [7.0.1](https://github.com/driver733/gradle-kotlin-setup-plugin/compare/v7.0.0...v7.0.1) (2021-05-22)
+
+
+### Bug Fixes
+
+* kotest spring ext version ([acf5fa0](https://github.com/driver733/gradle-kotlin-setup-plugin/commit/acf5fa0e2c34cda235ff281b9cfab51b4dfb56f1))
+
 ## [7.0.0](https://github.com/driver733/gradle-kotlin-setup-plugin/compare/v6.0.4...v7.0.0) (2021-05-22)
 
 
