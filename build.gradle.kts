@@ -13,15 +13,18 @@ repositories {
     gradlePluginPortal()
 }
 
-dependencies {
-    implementation(kotlin("gradle-plugin", "1.4.32"))
-    implementation(kotlin("allopen", "1.4.32"))
-    implementation("io.freefair.gradle:lombok-plugin:5.3.0")
-    implementation("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.16.0")
+val KOTLIN_VERSION = findProperty("KOTLIN_VERSION").toString()
+val KOTEST_VERSION = findProperty("KOTEST_VERSION").toString()
 
-    testImplementation(kotlin("reflect", "1.4.32"))
-    testImplementation("io.kotest:kotest-runner-junit5-jvm:4.4.1")
-    testImplementation("io.kotest:kotest-assertions-core-jvm:4.4.1")
+dependencies {
+    implementation(kotlin("gradle-plugin", KOTLIN_VERSION))
+    implementation(kotlin("allopen", KOTLIN_VERSION))
+    implementation(kotlin("reflect", KOTLIN_VERSION))
+    implementation("io.freefair.gradle:lombok-plugin:5.3.3.3")
+    implementation("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.17.1")
+
+    testImplementation("io.kotest:kotest-runner-junit5-jvm:$KOTEST_VERSION")
+    testImplementation("io.kotest:kotest-assertions-core-jvm:$KOTEST_VERSION")
 }
 
 tasks.withType<KotlinCompile>().configureEach {

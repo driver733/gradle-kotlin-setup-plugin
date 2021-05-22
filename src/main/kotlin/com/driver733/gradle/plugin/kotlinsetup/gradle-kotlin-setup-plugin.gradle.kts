@@ -1,6 +1,5 @@
 package com.driver733.gradle.plugin.kotlinsetup
 
-import gradle.kotlin.dsl.accessors._1b4c26afbd40f3a80ad253d03a3cfe3d.*
 import io.freefair.gradle.plugins.lombok.tasks.Delombok
 import io.gitlab.arturbosch.detekt.extensions.DetektExtension
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
@@ -13,28 +12,34 @@ plugins {
     id("io.gitlab.arturbosch.detekt")
 }
 
-dependencies {
-    implementation(kotlin("reflect", "1.4.32"))
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.3")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.4.3")
+val extension = project.extensions.create<KotlinSetupPluginExtension>("kotlinSetup")
 
-    implementation("io.github.microutils:kotlin-logging:2.0.6")
+with(extension) {
+    dependencies {
+        implementation(kotlin("reflect", kotlinVersion))
+        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
+        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor:$coroutinesVersion")
 
-    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.11.1") // do not update (yet). the update breaks tests due to a bug.
-    implementation("org.awaitility:awaitility-kotlin:4.0.3")
+        implementation("io.github.microutils:kotlin-logging:2.0.6")
 
-    testImplementation("io.kotest:kotest-runner-junit5-jvm:4.4.3")
-    testImplementation("io.kotest:kotest-assertions-core-jvm:4.4.3")
-    testImplementation("io.mockk:mockk:1.10.6")
+        implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.11.1") // do not update (yet). the update breaks tests due to a bug.
+        implementation("org.awaitility:awaitility-kotlin:4.0.3")
 
-    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.16.0")
-}
+        testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutinesVersion")
+        testImplementation("io.kotest:kotest-runner-junit5-jvm:$kotestVersion")
+        testImplementation("io.kotest:kotest-assertions-core-jvm:$kotestVersion")
+        testImplementation("io.mockk:mockk:1.10.6")
 
-afterEvaluate {
-    if (hasSpringTestDep()) {
-        dependencies {
-            testImplementation("io.kotest:kotest-extensions-spring:4.4.3")
-            testImplementation("com.ninja-squad:springmockk:2.0.3")
+        detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:$detektVersion")
+    }
+
+
+    afterEvaluate {
+        if (hasSpringTestDep()) {
+            dependencies {
+                testImplementation("io.kotest:kotest-extensions-spring:$kotestVersion")
+                testImplementation("com.ninja-squad:springmockk:3.0.1")
+            }
         }
     }
 }
@@ -49,7 +54,8 @@ fun hasSpringTestDep() =
     }
 
 fun Dependency.isSpringTest() =
-    group?.contains("spring") ?: false
+    group
+        ?.contains("spring") ?: false
             && name.contains("spring")
             && name.contains("test")
 
@@ -118,7 +124,7 @@ tasks
 
 fun DetektExtension.configFilePath() =
     javaClass
-        .getResourceAsStream("/config/detekt.yml")
+        .getResourceAsStream("/config/detekt.yml")!!
         .bufferedReader(Charsets.UTF_8)
         .use { it.readText() }
         .let {
